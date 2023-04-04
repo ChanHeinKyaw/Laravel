@@ -11,7 +11,7 @@
 
 <body>
     <article>
-        <h1><a href="/blog">First blog</a></h1>
+        <h1><a href="/blogs/first-blog">First blog</a></h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae earum, sint, aut numquam itaque
             repellat animi inventore magnam optio saepe. Voluptatem incidunt sed earum iste labore accusantium sequi
@@ -24,7 +24,7 @@
     </article>
 
     <article>
-        <h1><a href="/blog">Second blog</a></h1>
+        <h1><a href="/blogs/second-blog">Second blog</a></h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae earum, sint, aut numquam itaque
             repellat animi inventore magnam optio saepe. Voluptatem incidunt sed earum iste labore accusantium sequi
@@ -37,7 +37,7 @@
     </article>
 
     <article>
-        <h1><a href="/blog">Third blog</a></h1>
+        <h1><a href="/blogs/third-blog">Third blog</a></h1>
         <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora beatae earum, sint, aut numquam itaque
             repellat animi inventore magnam optio saepe. Voluptatem incidunt sed earum iste labore accusantium sequi

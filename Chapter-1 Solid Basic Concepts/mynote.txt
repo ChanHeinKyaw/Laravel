@@ -1,3 +1,7 @@
 1.Route တွေ က web.php က နေ စ ပြီး run တယ်
 2.laravel က return ပြန်ပေးရင် json format ကို auto ပြောင်းပြီး return ပြန်ပေးတယ်
 3.hardcoding ဆိုတာ code တွေကို အသေရေးထားတယ် ပြောင်းလဲ နိုင် ခြင်း မရှိတဲ့ code တွေကို ပြောတာ
+4.laravel မှာ လက်ရှိရောက်နေတဲ့ file path ကို သိချင်ရင် __DIR__ နဲ့ ကြည့်လို့ရတယ်။
+5.php မှာ file တွေ ကို ယူချင်ရင် file_get_contents() function နဲ့ ယူလို့ရတယ်။
+6.wild card ဆိုတာ url မှာ data ကို dynamic ဖြစ်စေချင်ရင် သုံးတာ (eg => /blogs/{blog}) 
+7.string တွေကို '' single code နဲ့ ရေးရင် အဲ့ထဲမှာ variable name တွေ အလုပ်မလုပ်ဘူး။ "" Double ပြောင်းပေးရတယ်။
