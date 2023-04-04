@@ -5,3 +5,8 @@
 5.php မှာ file တွေ ကို ယူချင်ရင် file_get_contents() function နဲ့ ယူလို့ရတယ်။
 6.wild card ဆိုတာ url မှာ data ကို dynamic ဖြစ်စေချင်ရင် သုံးတာ (eg => /blogs/{blog}) 
 7.string တွေကို '' single code နဲ့ ရေးရင် အဲ့ထဲမှာ variable name တွေ အလုပ်မလုပ်ဘူး။ "" Double ပြောင်းပေးရတယ်။
+8.php မှာ file_exists ဆိုတဲ့ function က file ရှိမရှိ စစ်ဖို့ သုံးတယ်။
+9.laravel မှာ dd က debug လိုက်ဖို့ သုံးတယ်။ သူ့ရဲ့ အရှည် က Dump and Die လို့ခေါတယ်။
+10. laravel မှာ redirect က page တွေ redirect လုပ်ချင်ရင် သုံးတယ် redirect လုပ်ပြီးသွား ရင် return ပြန်‌ပေးဖို့လည်း လိုတယ် 
+    return ပြန် မထားရင် အောက် code တွေ အလုပ်ဆက်လုပ် ပြီး error တက်သွားလိမ့်မယ်။
+11. abort() function က error page တွေ ပြန် ဖို့ အတွက် သုံးတယ်။
