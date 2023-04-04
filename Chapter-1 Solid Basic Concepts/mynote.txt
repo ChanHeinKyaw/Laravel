@@ -10,3 +10,8 @@
 10. laravel မှာ redirect က page တွေ redirect လုပ်ချင်ရင် သုံးတယ် redirect လုပ်ပြီးသွား ရင် return ပြန်‌ပေးဖို့လည်း လိုတယ် 
     return ပြန် မထားရင် အောက် code တွေ အလုပ်ဆက်လုပ် ပြီး error တက်သွားလိမ့်မယ်။
 11. abort() function က error page တွေ ပြန် ဖို့ အတွက် သုံးတယ်။
+12.laravel မှာ wildcard ကို Alpha တွေ ပဲ လက်ခံမယ်ဆိုရင် where('wildcard_name','regular_expression') နဲ့ စစ်လို့ရတယ်။
+    whereAlpha('wildcard_name') က wildcard name မှာ alpha တွေ ပဲ လက်ခံမယ် ဆိုပြီး regular expression မပါပဲ တခါတည်း စစ်လိုက်တာ
+    whereNumber('wildcard_name') က wildcard name မှာ number တွေ ပဲ လက်ခံမယ် ဆိုပြီး regular expression မပါပဲ တခါတည်း စစ်လိုက်တာ
+    whereAlphaNumeric('wildcar_name') က wildcard name မှာ number နဲ့ alpha တွေ ပဲ လက်ခံမယ် ဆိုပြီး regular expression မပါပဲ တခါတည်း စစ်လိုက်တာ။
+    လက်မခံထားတဲ့ name တွေ ပါလာရင် 404 page ကို တခါတည်း ခေါသွားတယ်။ အခု လို စစ်တာ ကို wildcard contraint လို့ခေါတယ်။
