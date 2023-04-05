@@ -17,15 +17,17 @@ Route::get('/', function () {
     return view('blogs');
 });
 
-Route::get('/blogs/{blog}', function ($filename) {
-    dd($filename);
-    $path = __DIR__ . "/../resources/blogs/$filename.html";
+Route::get('/blogs/{blog}', function ($slug) {
+    $path = __DIR__ . "/../resources/blogs/$slug.html";
     if (!file_exists($path)) {
         // dd("hit");
         // abort(404);
         // return redirect('/');
     }
-    $blog = file_get_contents($path);
+    $blog = cache()->remember("posts.$slug", now()->addW(), function () use ($path) {
+        var_dump('file get content');
+        return file_get_contents($path);
+    });
     return view('blog', ['blog' => $blog]);
 })->where('blog', '[A-z\d\-_]+');
 
