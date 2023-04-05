@@ -15,3 +15,9 @@
     whereNumber('wildcard_name') က wildcard name မှာ number တွေ ပဲ လက်ခံမယ် ဆိုပြီး regular expression မပါပဲ တခါတည်း စစ်လိုက်တာ
     whereAlphaNumeric('wildcar_name') က wildcard name မှာ number နဲ့ alpha တွေ ပဲ လက်ခံမယ် ဆိုပြီး regular expression မပါပဲ တခါတည်း စစ်လိုက်တာ။
     လက်မခံထားတဲ့ name တွေ ပါလာရင် 404 page ကို တခါတည်း ခေါသွားတယ်။ အခု လို စစ်တာ ကို wildcard contraint လို့ခေါတယ်။
+13.laravel မှာ CPU အလုပ်တွေကို လျော့ ချ ချင်ရင် Cache သုံးလို့ရတယ်။ Cache မှာ remenber ဆိုတဲ့  function တစ်ခု ရှိတယ်။ remember မှာ param (3) ခု
+   လိုတယ်။ 1. unique key, 2. time , 3. function သုံးခု ထည့်ပေးရတယ်။ remember က data တွေကို return ပြန် ပေးရတယ်။
+14.laravel မှာ now() function က date တွေကို တိုးချင် လျော့ ချင်ရင် သုံးတယ်။
+   1. now()->addWeek();
+   2. now()->addDay();
+   ....
