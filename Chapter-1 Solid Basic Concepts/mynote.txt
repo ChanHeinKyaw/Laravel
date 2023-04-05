@@ -21,3 +21,4 @@
    1. now()->addWeek();
    2. now()->addDay();
    ....
+15.laravel မှာ default ပါ ပြီးသား folder တွေရဲ့ path လမ်းကြောင်းကို ခေါ ချင်ရင် foldername_path() function နဲ့ ခေါလို့ရတယ်။ eg. resource_path()
