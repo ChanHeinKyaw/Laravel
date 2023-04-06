@@ -26,3 +26,6 @@
     Array return ပြန် ပေးရတယ်။ $files[0]->getContents() ဆိုပြီး ထုတ်လိုက်ရင် ပထမ array ရဲ့ html content တွေ ရလာတယ်။
 17.php မှာ array တစ်ခု ကို အခြေ ခံပြီး လိုချင်တဲ့ data ကို နောက်ထပ် Array တစ်ခု နဲ့ လိုချင်ရင် array_map() function ကို သုံးပေးရတယ်။
     array_map() function မှာ param (2)ခု လို တယ်။ ပထမ တစ်ခု က function နဲ့ ဒုတိယ တစ်ခု က အ‌ခြေခံချင်တဲ့ Array ထည့်ပေးရတယ်။
+18.install yaml-front-matter package 
+    composer require spatie/yaml-front-matter
+    
