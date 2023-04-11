@@ -28,4 +28,10 @@
     array_map() function မှာ param (2)ခု လို တယ်။ ပထမ တစ်ခု က function နဲ့ ဒုတိယ တစ်ခု က အ‌ခြေခံချင်တဲ့ Array ထည့်ပေးရတယ်။
 18.install yaml-front-matter package 
     composer require spatie/yaml-front-matter
+19.laravel ရဲ့ collection က array တွေကို အခြေခံ ပြီး array တွေကို တစ်ခုနဲ့ တစ်ခု map လုပ်ချင်လား filter လုပ်ချင်တာလား ပထမ item ကို 
+    ဆွဲထုတ်ချင်လား။ နောက် ဆုံး item ကို ဆွဲထုတ် ချင်လား အဲ့လို‌တွေ အသုံး ပြုလိုက်ရပါတယ်။
+20.static methods တွေကို ခေါ် ချင်ရင် static keyword နဲ့ ခေါ် သုံးလို့ရတယ်။
+    laravel collection ရဲ့ အားသာချက် က array ကို collection နဲ့ အုပ်ထားတာ ဖြစ်လို့ 
+    array ရဲ့ ပထမ ဆုံး item ကို လိုချင်ရင် first(), နောက် ဆုံး item ကို လိုချင်ရင် last() နဲ့ ခေါ် သုံးပေးရတယ်။
+    တခြား အားသာချက် တွေလည်း ရှိသေးတယ်။
     
