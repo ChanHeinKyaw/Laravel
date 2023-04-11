@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <?= $blog ?>
+    <h1><?= $blog->title ?></h1>
+    <div><?= $blog->intro ?></div>
     <a href="/">Go Back</a>
     <script src="/js/app.js"></script>
 </body>
