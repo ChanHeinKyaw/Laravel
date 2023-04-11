@@ -1,6 +1,7 @@
-@extends('layout')
-@section('title', 'All Blogs')
-@section('content')
+<x-layout>
+    <x-slot name="title">
+        All Blog
+    </x-slot>
     @foreach ($blogs as $blog)
         <h1><a href="blogs/{{ $blog->slug }}">{{ $blog->title }}</a></h1>
         <div>
@@ -8,4 +9,4 @@
             <p>{{ $blog->intro }}</p>
         </div>
     @endforeach
-@endsection
+</x-layout>
