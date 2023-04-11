@@ -44,4 +44,6 @@
     eg(2)
     $nums = collect([1,2,3,4]); // [1,2,3,4]
     $nums->take(2); // [1,2]
+22.{{  }} // HTML code တွေကို Escape လုပ်တယ်။
+    {!!  !!} // HTML code တွေကို Escape မလုပ်ဘူး။
 

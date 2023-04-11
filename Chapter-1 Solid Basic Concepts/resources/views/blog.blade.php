@@ -10,8 +10,8 @@
 </head>
 
 <body>
-    <h1><?= $blog->title ?></h1>
-    <div><?= $blog->intro ?></div>
+    <h1>{{ $blog->title }}</h1>
+    <div>{!! $blog->body !!}</div>
     <a href="/">Go Back</a>
     <script src="/js/app.js"></script>
 </body>
