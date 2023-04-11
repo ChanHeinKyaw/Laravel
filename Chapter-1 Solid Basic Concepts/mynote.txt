@@ -34,4 +34,14 @@
     laravel collection ရဲ့ အားသာချက် က array ကို collection နဲ့ အုပ်ထားတာ ဖြစ်လို့ 
     array ရဲ့ ပထမ ဆုံး item ကို လိုချင်ရင် first(), နောက် ဆုံး item ကို လိုချင်ရင် last() နဲ့ ခေါ် သုံးပေးရတယ်။
     တခြား အားသာချက် တွေလည်း ရှိသေးတယ်။
-    
+21.laravel ရဲ့ tinker ကို သုံးချင်ရင်
+    cmd မှာ php artisan tinker လို့ ရိုက်ပြီး laravel tinker ကို ဖွင့်လိုက်ပါ။
+    tiner မှာ php code တွေ run လို့ရသလို laravel code တွေလည်း run လို့ရပါတယ်။
+    eg(1)
+    $num = 1; // 1
+    $num + 2; // 3
+
+    eg(2)
+    $nums = collect([1,2,3,4]); // [1,2,3,4]
+    $nums->take(2); // [1,2]
+
