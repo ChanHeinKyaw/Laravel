@@ -67,4 +67,23 @@ run => php artisan tinker
     $users->map(function($user){
         return $user->name;
     });
+24.table name က blogs နဲ့ ပေးထားရင် model name က Blog ဆိုတဲ့ name နဲ့ ပေးရမယ်။
+    eg , students => Student
+
+    // Create Table
+    php artisan make:migration create_blogs_table
+
+    // Create Model
+    php artisan make:model Blog
+
+    // Create Blog Data
+    run => php artisan tinker
+    $blog = new Blog;
+    $blog->title = "this is title";
+    $blog->intro = "this is intro";
+    $blog->body = "thi is body";
+    $blog->save();
+
+
+    
 
