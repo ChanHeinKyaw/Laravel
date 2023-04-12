@@ -46,4 +46,25 @@
     $nums->take(2); // [1,2]
 22.{{  }} // HTML code တွေကို Escape လုပ်တယ်။
     {!!  !!} // HTML code တွေကို Escape မလုပ်ဘူး။
+23.Eloquent Model ဆိုတာ App ထဲ က Models ထဲ က  file တွေကို ပြောတာ။
+
+run => php artisan tinker
+    // new App\Models\User;
+    // new User;
+    $user = new User;
+    $user->name = "MgMg";
+    $user->email = "mgmg@gmail.com";
+    $user->password = bcrypt("password");
+    $user->save();
+
+    User::find(1);
+    User::findOrFail(11111);   // return ModelNotFoundException;
+
+    $user->all(); 
+    $user->pluck('name');
+    $user->first();
+    $user->last();
+    $users->map(function($user){
+        return $user->name;
+    });
 
