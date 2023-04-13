@@ -103,6 +103,12 @@ run => php artisan tinker
     // guarded က id ဆိုတဲ့ value ပါလာရင် ignore လုပ်ပေးမယ်လို့ပြောတာ။
     တကယ် လို့ $guarded = [] လို့ပဲ ရေးရင် ပါလာတဲ့ value တွေအကုန်လုံးကို ignore လုပ်ပေးမယ်လို့ပြောတာ။
 
+26. php artisan migrate:fresh ဆိုတဲ့ command ကို production server ပေါ် မှာ confirmation လုပ်စေချင်ရင် 
+    env file ထဲက APP_ENV မှာ production လို့ ပြောင်းပေးရမယ်။
+
+    route model binding ကို သုံးရင် findOrFail နဲ့ ရှာပေးတယ် findOrFail က default အနေနဲ့ id ကို ပဲ ရှာပေးတယ် အဲ့တော့ slug နဲ့ ရှာချင်ရင်
+    wildcard ရဲ့ နောက် မှာ ":" နဲ့ column name ထည့်ပေးရတယ်။ eg => "/blog/{blog:slug}"
+
 
 
 
