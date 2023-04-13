@@ -109,8 +109,5 @@ run => php artisan tinker
     route model binding ကို သုံးရင် findOrFail နဲ့ ရှာပေးတယ် findOrFail က default အနေနဲ့ id ကို ပဲ ရှာပေးတယ် အဲ့တော့ slug နဲ့ ရှာချင်ရင်
     wildcard ရဲ့ နောက် မှာ ":" နဲ့ column name ထည့်ပေးရတယ်။ eg => "/blog/{blog:slug}"
 
-
-
-
-    
-
+27.  Blog တစ်ခု က Category တစ်ခုနဲ့ ပဲ သက်ဆိုင်တယ် ဆိုရင် belongsTo ကို သုံး။
+    တခြား table က id ကို လှမ်းခေါ် ချင်ရင် laravel မှာ forgeinId နဲ့‌ ခေါ် ပေးရတယ်။
