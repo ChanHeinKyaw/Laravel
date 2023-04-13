@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Blog extends Model
 {
@@ -11,4 +12,8 @@ class Blog extends Model
 
     // protected $guarded = [];
     protected $fillable = ['title','slug','intro','body'];
+
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
