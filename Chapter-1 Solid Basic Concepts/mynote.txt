@@ -84,6 +84,27 @@ run => php artisan tinker
     $blog->body = "thi is body";
     $blog->save();
 
+25. run => php artisan tinker
+    Blog::create([
+        'title' => 'this is new title two',
+        'intro' => 'this is new intro two',
+        'body' => 'this is new body two'
+    ]);
+
+    error => MassAssignmentException;
+
+    MassAssignmentException က Blog ဆိုတဲ့ Model ထဲမှာ title, intro, body ဆိုတဲ့ value တွေကို fillable ဆိုတဲ့ property ထဲမှာ allow လုပ်ပေးဖို့
+    လိုတယ်လို့ ပြောတာပါ။
+
+    protected $fillable = ['title','intro','body']; 
+    // fillable က title, intro, body ဆိုတဲ့ value တွေပါလာရင် allow လုပ်ပေးမယ်လို့ပြောတာ။
+
+    protected $guarded = ['id'];
+    // guarded က id ဆိုတဲ့ value ပါလာရင် ignore လုပ်ပေးမယ်လို့ပြောတာ။
+    တကယ် လို့ $guarded = [] လို့ပဲ ရေးရင် ပါလာတဲ့ value တွေအကုန်လုံးကို ignore လုပ်ပေးမယ်လို့ပြောတာ။
+
+
+
 
     
 
