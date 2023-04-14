@@ -19,7 +19,6 @@ class DatabaseSeeder extends Seeder
         User::truncate();
         Blog::truncate();
         Category::truncate();
-        User::factory()->create();
 
         $frontend = Category::factory()->create(['name' => 'frontend']); // over write category factory "name" data
         $backend = Category::factory()->create(['name' => 'backend']);  // over write category factory "name" data
