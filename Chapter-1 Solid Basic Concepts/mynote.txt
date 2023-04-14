@@ -133,4 +133,47 @@ run => php artisan tinker
 30. factory မှာ count မထည့်ပေးလိုက်ရင် default က 1 အနေနဲ့ count လုပ်သွားပေးတယ်။
     user table မှာ ရှိသမျှ data အားလုံးကို ဖျက်ချင်ရင် User::truncate() နဲ့ ဖျက်လို့ရတယ်။
 
+31. table တစ်ခု နဲ့ တစ်ခု relation ချိတ်တဲ့ အခါမှာ 
     
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    ဒီလိုရေးမယ် ဆိုရင် laravel က method name ကို ကြည့်ပြီး user_id လို့ သတ်မှတ် သွားမှာ ဖြစ်ပါတယ် တကယ်လို့ method name ကို 
+    user လို့ မရေးချင်ပဲ author လို့ ပြောင်းရေးလိုက်မယ် ဆိုရင် author_id က မတွေ့ဘူး ဆိုပြီး error တက် သွားမှာ ဖြစ်ပါတယ်။ 
+    တကယ် လို့ author လို့ပြောင်းရေးချင်တယ် ဆိုရင် relation ကို ဒီလို ရေးပေးရပါ့မယ်။
+
+    public function author(){
+        return $this->belongsTo(User::class,'user_id');
+    }
+
+    second parameter မှာ forgeinId ထည့်ပေးလိုက်ရင် laravel က method name ကို မကြည့်တော့ပဲ user_id ကိုပဲ ကြည့်သွားမှာ ဖြစ် ပါတယ်။
+
+
+    lazy loading and eager loading
+
+    table ထဲမှာ ရှိတဲ့ post တွေ အကုန်လုံး ကို ဆွဲပြီး lazy loading ရချင်တယ် ဆိုရင် with() နဲ့ ရေးရပါတယ်။
+
+    eg. Blog::with('category','author')->get();
+
+    table ထဲမှာ ရှိတဲ့ post object ကနေ lazy loading ထည့်ချင်တာဆိုရင် load('category','author') နဲ့ ထည့်ပေးရပါတယ်။
+
+    တကယ် လို့ with တို့ load တို့ကို မသုံးချင်ရင် blog model မှာ $with ဆိုတဲ့ property ကို သုံး ပြိးတော့ တခါတည်းရေးလို့လည်း ရပါတယ်။
+    ဒါပေမဲ့ အဲ့လို ရေးမျိုးဆိုရင် blog query ကို ဆွဲထုတ်တိုင်း $with ထဲမှာ ရေးထားတဲ့ query တွေက လည်း လိုချင်ချင် မလိုချင်ချင် အလုပ်လုပ်နေမှာဖြစ်ပါတယ်။
+    တကယ် လို့ မလိုချင်တဲ့ query ကို ဆိုရင်တော့ without ထဲမှာ query name ထည့်ပေးလိုက်ရင် ထည့်ပေးလိုက်တဲ့ name နဲ့ query ကို အလုပ်မလုပ်တော့ပါဘူး။
+
+    eg => 
+
+    protected $with = ['category','author'];
+
+    category နဲ့ author query တွေက အလုပ်လုပ်နေလား စမ်းချင်ရင် tinker မှာ စမ်းလို့ရပါတယ်။
+
+    run => php artisan tinker
+
+    Blog::first() ဆိုပြီး query တစ်ကြောင်း ဆွဲထုတ်ကြည့်ပါ author နဲ့ category ရဲ့ query တွေကို တွေ့ရမှာဖြစ်ပါတယ်။
+    တကယ် လို့ author query ကို အလုပ်မလုပ်စေချင်ဘူးဆိုရင်တော့။
+
+    Blog::without('author')->first(); 
+
+    လို့run လိုက်ရင် author ရဲ့ query ပါလာမှာ မဟုတ်တော့ပါဘူး။
+
