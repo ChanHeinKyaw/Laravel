@@ -19,32 +19,12 @@ class DatabaseSeeder extends Seeder
         User::truncate();
         Blog::truncate();
         Category::truncate();
-        \App\Models\User::factory()->create();
+        User::factory()->create();
 
-        $frontend = Category::create([
-            'name' => 'frontend',
-            'slug' => 'frontend'
-        ]);
+        $frontend = Category::factory()->create(['name' => 'frontend']); // over write category factory "name" data
+        $backend = Category::factory()->create(['name' => 'backend']);  // over write category factory "name" data
 
-        $backend = Category::create([
-            'name' => 'backend',
-            'slug' => 'backend'
-        ]);
-
-        Blog::create([
-            'title' => 'frontend post',
-            'slug' => 'frontend-post',
-            'intro' => 'this is intro',
-            'body' =>  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus minima esse provident eos neque, adipisci eligendi eveniet, numquam architecto veritatis unde earum, sunt fuga ex error magni mollitia aliquid repellat ratione in rem. Tenetur nihil, voluptas minus omnis enim consequuntur assumenda alias reiciendis asperiores consectetur libero ratione nemo officiis quidem.',
-            'category_id' => $frontend->id,
-        ]);
-
-        Blog::create([
-            'title' => 'backend post',
-            'slug' => 'backend-post',
-            'intro' => 'this is intro',
-            'body' =>  'Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus minima esse provident eos neque, adipisci eligendi eveniet, numquam architecto veritatis unde earum, sunt fuga ex error magni mollitia aliquid repellat ratione in rem. Tenetur nihil, voluptas minus omnis enim consequuntur assumenda alias reiciendis asperiores consectetur libero ratione nemo officiis quidem.',
-            'category_id' => $backend->id,
-        ]);
+        Blog::factory(2)->create(['category_id' => $frontend->id ]); // over write blog factory "category_id" data
+        Blog::factory(2)->create(['category_id' => $backend->id ]); // over write blog factory "category_id" data
     }
 }
