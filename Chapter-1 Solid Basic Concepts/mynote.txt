@@ -111,3 +111,5 @@ run => php artisan tinker
 
 27.  Blog တစ်ခု က Category တစ်ခုနဲ့ ပဲ သက်ဆိုင်တယ် ဆိုရင် belongsTo ကို သုံး။
     တခြား table က id ကို လှမ်းခေါ် ချင်ရင် laravel မှာ forgeinId နဲ့‌ ခေါ် ပေးရတယ်။
+
+28.  Category တစ်ခု က Blog အများကြီး ရှိနိုင်တာမလို့ ့‌ hasMany ကို သုံး။
