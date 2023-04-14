@@ -113,3 +113,21 @@ run => php artisan tinker
     တခြား table က id ကို လှမ်းခေါ် ချင်ရင် laravel မှာ forgeinId နဲ့‌ ခေါ် ပေးရတယ်။
 
 28.  Category တစ်ခု က Blog အများကြီး ရှိနိုင်တာမလို့ ့‌ hasMany ကို သုံး။
+
+29. Page တစ်ခု မှာ Database ကနေ Query ဘယ်နှကြောင်း ထွက်နေလဲ ကြည့်ချင်ရင်။
+    DB::listen(function($query){
+        Log::info($query->sql);
+    });
+
+    နဲ့ ကြည့်လို့ရတယ်။
+
+    Log::info လို့ မသုံးချင်ရင် logger() နဲ့ရေးလို့ရတယ်။
+
+    $query->sql က query တွေကို sql format နဲ့ ထုတ်ပေးပါပြောလိုက်တာပါ။
+
+    Log တွေထဲမှာ query ထပ်ထုတ်ထားရင် N+1 error ကို တက်စေပါတယ်။ သူက loop ဆယ် ခါပတ်ရင် query 10 ခါထုတ်သွားမလို့
+    ဖြစ်စေတဲ့ error မျိုးပါ တကယ် လို့ အဲ့ error မတက်စေချင်ရင် with နဲ့ ဆွဲထုတ်ဖို့လိုပါတယ်။ with('category') ထဲမှာ relation ရဲ့
+    name ကို ထည့်ပေးဖို့လိုပါတယ်။ with နဲ့ ယူထားတာမလို့ all() နဲ့ ထုတ်လို့မရပါဘူး get() နဲ့ ထုတ်ပေးဖို့လိုပါတယ်။all() က static ပုံစံ ခေါတဲ့ 
+    method တွေမှာမှ အလုပ်လုပ်တာ မလို့ပါ။
+
+    

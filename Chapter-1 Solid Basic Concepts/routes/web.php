@@ -1,8 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Models\Blog;
 use App\Models\Category;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,7 +18,10 @@ use App\Models\Category;
  */
 
 Route::get('/', function () {
-    return view('blogs', ['blogs' => Blog::all()]);
+    // DB::listen(function($query){
+    //     Log::info($query->sql);
+    // });
+    return view('blogs', ['blogs' => Blog::with('category')->get()]);
 });
 
 Route::get('/blogs/{blog:slug}', function (Blog $blog) {
