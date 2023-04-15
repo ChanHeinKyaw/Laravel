@@ -1,3 +1,4 @@
+@props(['blogs' => 'default data'])
 <section class="container text-center" id="blogs">
     <h1 class="display-5 fw-bold mb-4">Blogs</h1>
     <div class="">
@@ -17,17 +18,10 @@
         </div>
     </form>
     <div class="row">
-        <div class="col-md-4 mb-4">
-            <x-blog-card />
-        </div>
-        <div class="col-md-4 mb-4">
-            <x-blog-card />
-        </div>
-        <div class="col-md-4 mb-4">
-            <x-blog-card />
-        </div>
-        <div class="col-md-4 mb-4">
-            <x-blog-card />
-        </div>
+        @foreach ($blogs as $blog)
+            <div class="col-md-4 mb-4">
+                <x-blog-card :blog="$blog" />
+            </div>
+        @endforeach
     </div>
 </section>
