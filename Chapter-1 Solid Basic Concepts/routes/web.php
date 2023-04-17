@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 
 Route::get('/blogs/{blog:slug}', function (Blog $blog) {
-    return view('blog', ['blog' => $blog]);
+    return view('blog', ['blog' => $blog,'randomBlogs' => Blog::inRandomOrder()->take(3)->get()]);
 })->where('blog', '[A-z\d\-_]+');
 
 Route::get('/categories/{category:slug}', function (Category $category) {
