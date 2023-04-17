@@ -21,17 +21,19 @@
     </div>
     <form action="/" class="my-3" method="GET">
         <div class="input-group mb-3">
-            <input type="text" name="search" autocomplete="false" class="form-control" placeholder="Search Blogs..." />
+            <input type="text" name="search" value="{{ request('search') }}" autocomplete="false" class="form-control" placeholder="Search Blogs..." />
             <button class="input-group-text bg-primary text-light" id="basic-addon2" type="submit">
                 Search
             </button>
         </div>
     </form>
     <div class="row">
-        @foreach ($blogs as $blog)
+        @forelse ($blogs as $blog)
             <div class="col-md-4 mb-4">
                 <x-blog-card :blog="$blog" />
             </div>
-        @endforeach
+        @empty
+            <p class="text-center">No Blogs Found.</p>
+        @endforelse
     </div>
 </section>
