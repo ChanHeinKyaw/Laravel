@@ -22,7 +22,11 @@ Route::get('/', function () {
     // DB::listen(function($query){
     //     Log::info($query->sql);
     // });
-    return view('blogs', ['blogs' => Blog::latest()->get(), 'categories' => Category::all()]);
+    $blogs = Blog::latest();
+    if(request('search')){
+        $blogs = $blogs->where('title','LIKE', '%' . request('search'). '%');
+    }
+    return view('blogs', ['blogs' => $blogs->get(), 'categories' => Category::all()]);
 });
 
 Route::get('/blogs/{blog:slug}', function (Blog $blog) {
