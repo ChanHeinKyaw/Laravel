@@ -12,7 +12,11 @@ class BlogController extends Controller
         // DB::listen(function($query){
         //     Log::info($query->sql);
         // });
-        return view('blogs', ['blogs' => $this->getBlogs(), 'categories' => Category::all()]);
+        return view('blogs', [
+            // 'blogs' => $this->getBlogs(),
+            'blogs' => Blog::latest()->filter(request('search'))->get(),
+            'categories' => Category::all()
+        ]);
     }
 
     public function show(Blog $blog) {
@@ -20,12 +24,16 @@ class BlogController extends Controller
     }
 
     protected function getBlogs(){
-        $blogs = Blog::latest();
-        if(request('search')){
-            $blogs = $blogs->where('title','LIKE', '%' . request('search'). '%')
-            ->orWhere('body','LIKE', '%' . request('search'). '%');
-        }
+        // $blogs = Blog::latest();
+        // if(request('search')){
+        //     $blogs = $blogs->where('title','LIKE', '%' . request('search'). '%')
+        //     ->orWhere('body','LIKE', '%' . request('search'). '%');
+        // }
 
-        return $blogs->get();
+        // $blogs->when(request('search'),function($query,$search){
+        //     $query->where('title','LIKE', '%' . $search. '%')
+        //     ->orWhere('body','LIKE', '%' . $search. '%');
+        // });
+        // return $blogs->get();
     }
 }
