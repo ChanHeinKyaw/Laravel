@@ -177,3 +177,5 @@ run => php artisan tinker
 
     လို့run လိုက်ရင် author ရဲ့ query ပါလာမှာ မဟုတ်တော့ပါဘူး။
 
+32. logical grouping တွေကို where နဲ့ orwhere ပေါင်းရေးတဲ့ အခါမှာ သုံးသင့်တယ်။
+
