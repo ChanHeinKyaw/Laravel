@@ -20,10 +20,12 @@ class DatabaseSeeder extends Seeder
         Blog::truncate();
         Category::truncate();
 
-        $frontend = Category::factory()->create(['name' => 'frontend']); // over write category factory "name" data
-        $backend = Category::factory()->create(['name' => 'backend']);  // over write category factory "name" data
+        $mgmg = User::factory()->create(['name' => 'mgmg','username' => 'mgmg']);
+        $aungaung = User::factory()->create(['name' => 'aungaung','username' => 'aungaung']);
+        $frontend = Category::factory()->create(['name' => 'frontend','slug'=> 'frontend']); // over write category factory "name" data
+        $backend = Category::factory()->create(['name' => 'backend','slug'=> 'backend']);  // over write category factory "name" data
 
-        Blog::factory(2)->create(['category_id' => $frontend->id ]); // over write blog factory "category_id" data
-        Blog::factory(2)->create(['category_id' => $backend->id ]); // over write blog factory "category_id" data
+        Blog::factory(2)->create(['category_id' => $frontend->id,'user_id' => $mgmg->id ]); // over write blog factory "category_id" data
+        Blog::factory(2)->create(['category_id' => $backend->id,'user_id' => $aungaung->id ]); // over write blog factory "category_id" data
     }
 }
