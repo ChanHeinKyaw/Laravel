@@ -15,7 +15,7 @@ class BlogController extends Controller
         return view('blogs', [
             // 'blogs' => $this->getBlogs(),
             'blogs' => Blog::latest()->filter(request(['search','category']))->get(),
-            'categories' => Category::all()
+            // 'categories' => Category::all()
         ]);
     }
 

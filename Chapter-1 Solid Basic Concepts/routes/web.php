@@ -29,6 +29,9 @@ Route::get('/blogs/{blog:slug}', [BlogController::class,'show']);
 
 Route::get('/users/{user:username}', function (User $user) {
     // return view('blogs', ['blogs' => $user->blogs->load('category','author')]);
-    return view('blogs', ['blogs' => $user->blogs,'categories' => Category::all()]);
+    return view('blogs', [
+        'blogs' => $user->blogs,
+        // 'categories' => Category::all()
+    ]);
 });
 
