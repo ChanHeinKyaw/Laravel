@@ -16,7 +16,7 @@ class BlogController extends Controller
             // 'blogs' => $this->getBlogs(),
             'blogs' => Blog::latest()
                         ->filter(request(['search','category','username']))
-                        ->paginate(6)
+                        ->simplePaginate(6)
                         ->withQueryString(),
             // 'categories' => Category::all()
         ]);
