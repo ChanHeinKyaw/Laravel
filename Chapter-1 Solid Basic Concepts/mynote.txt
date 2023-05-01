@@ -179,3 +179,12 @@ run => php artisan tinker
 
 32. logical grouping တွေကို where နဲ့ orwhere ပေါင်းရေးတဲ့ အခါမှာ သုံးသင့်တယ်။
 
+33. CSRF(Cross-Site Request Forgery ) ဆိုတာ website တစ်ခု ကနေ တခြား request တစ်ခု fake data တွေ လှမ်းပို့မှာ စိုးလို့
+    ကာ ထားတဲ့ security တစ်ခု ဖြစ်ပါတယ်။
+
+    ဥပမာ => creative coder website ကနေ facebook website ကို user account delete လုပ်တဲ့ request တစ်ခု ပို့ခဲ့ရင် 
+        CRSF နဲ့ ကားထားလို့ ပို့လို့ရမှာမဟုတ်ပါဘူး။ 419 (Page Not Found) Error တက်မှာ ဖြစ်ပါတယ်။
+
+    CSRF က laravle မှာ ခေါသုံးချင်ရင် @csrf ဆိုတဲ့ blade engine လေး တစ်ခု form မှာ ထည့်ပေးလိုက်ရုံပါပဲ။ သူက 
+    input type hidden နဲ့ input တစ်ခု create ပြီး value ကို laravel က generate token တစ်ခု ထုတ်ပေးလိုက်တယ်
+    အဲ့ ထူတ်ပေးလိုက်တဲ့ generate key နဲ့ backend မှာ တူမတူ တိုက်စစ်ပြီး တူမှ request တွေကို ပို့ခိုင်းပါတယ်။
