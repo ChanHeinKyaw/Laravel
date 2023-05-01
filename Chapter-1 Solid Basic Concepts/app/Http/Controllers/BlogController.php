@@ -14,7 +14,10 @@ class BlogController extends Controller
         // });
         return view('blogs', [
             // 'blogs' => $this->getBlogs(),
-            'blogs' => Blog::latest()->filter(request(['search','category','username']))->get(),
+            'blogs' => Blog::latest()
+                        ->filter(request(['search','category','username']))
+                        ->paginate(6)
+                        ->withQueryString(),
             // 'categories' => Category::all()
         ]);
     }
