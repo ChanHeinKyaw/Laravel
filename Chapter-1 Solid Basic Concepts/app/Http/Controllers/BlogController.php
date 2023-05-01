@@ -12,7 +12,7 @@ class BlogController extends Controller
         // DB::listen(function($query){
         //     Log::info($query->sql);
         // });
-        return view('blogs', [
+        return view('blogs.index', [
             // 'blogs' => $this->getBlogs(),
             'blogs' => Blog::latest()
                         ->filter(request(['search','category','username']))
@@ -23,7 +23,7 @@ class BlogController extends Controller
     }
 
     public function show(Blog $blog) {
-        return view('blog', ['blog' => $blog,'randomBlogs' => Blog::inRandomOrder()->take(3)->get()]);
+        return view('blogs.show', ['blog' => $blog,'randomBlogs' => Blog::inRandomOrder()->take(3)->get()]);
     }
 
     protected function getBlogs(){
