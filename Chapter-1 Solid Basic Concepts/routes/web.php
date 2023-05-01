@@ -27,11 +27,11 @@ Route::get('/blogs/{blog:slug}', [BlogController::class,'show']);
 //     return view('blogs', ['blogs' => $category->blogs,'categories' => Category::all(), 'currentCategory' => $category]);
 // });
 
-Route::get('/users/{user:username}', function (User $user) {
-    // return view('blogs', ['blogs' => $user->blogs->load('category','author')]);
-    return view('blogs', [
-        'blogs' => $user->blogs,
-        // 'categories' => Category::all()
-    ]);
-});
+// Route::get('/users/{user:username}', function (User $user) {
+//     // return view('blogs', ['blogs' => $user->blogs->load('category','author')]);
+//     return view('blogs', [
+//         'blogs' => $user->blogs,
+//         // 'categories' => Category::all()
+//     ]);
+// });
 
