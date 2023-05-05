@@ -10,7 +10,15 @@ class AuthController extends Controller
         return view('register.create');
     }
 
-    public function store(){
-        dd(request()->all());
+    public function store()
+    {
+        request()->validate([
+            'name' => ['required', 'max:255', 'min:3'],
+            'email' => ['required', 'email'],
+            'username' => ['required', 'max:255', 'min:3'],
+            'password' => ['required', 'min:8'],
+        ]);
+
+        dd("success");
     }
 }
