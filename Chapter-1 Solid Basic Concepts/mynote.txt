@@ -188,3 +188,6 @@ run => php artisan tinker
     CSRF က laravle မှာ ခေါသုံးချင်ရင် @csrf ဆိုတဲ့ blade engine လေး တစ်ခု form မှာ ထည့်ပေးလိုက်ရုံပါပဲ။ သူက 
     input type hidden နဲ့ input တစ်ခု create ပြီး value ကို laravel က generate token တစ်ခု ထုတ်ပေးလိုက်တယ်
     အဲ့ ထူတ်ပေးလိုက်တဲ့ generate key နဲ့ backend မှာ တူမတူ တိုက်စစ်ပြီး တူမှ request တွေကို ပို့ခိုင်းပါတယ်။
+
+34. Accessors က table ထဲက column data တစ်ခု ကို လှမ်းမထုတ်ခင် မှာ အရင် ဆုံး အလုပ်လုပ် တဲ့  function ကို ပြောတာ။
+    Mutators က table ထဲကို data မထည့်ခင် မှာ column data တစ်ခု ကို ပြင်ချင်ရင် အရင် ဆုံး အလုပ်လုပ် တဲ့  function ကို ပြောတာ။

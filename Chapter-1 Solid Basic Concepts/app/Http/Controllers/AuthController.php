@@ -20,6 +20,7 @@ class AuthController extends Controller
             'password' => ['required', 'min:8'],
         ]);
 
+        // $formData['password'] = bcrypt($formData['password']);
         User::create($formData);
 
         return redirect('/');
