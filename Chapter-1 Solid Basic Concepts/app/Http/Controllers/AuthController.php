@@ -23,7 +23,15 @@ class AuthController extends Controller
         // $formData['password'] = bcrypt($formData['password']);
         $user = User::create($formData);
 
+        // Login
+        auth()->login($user);
+
         // session()->flash('success', 'Welcome Dear, ' . $user->name);
         return redirect('/')->with('success', 'Welcome Dear, ' . $user->name);
+    }
+
+    public function logout(){
+        auth()->logout();
+        return redirect('/')->with('success', 'Good Bye');
     }
 }
