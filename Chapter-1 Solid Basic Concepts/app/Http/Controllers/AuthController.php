@@ -21,8 +21,9 @@ class AuthController extends Controller
         ]);
 
         // $formData['password'] = bcrypt($formData['password']);
-        User::create($formData);
+        $user = User::create($formData);
 
-        return redirect('/');
+        // session()->flash('success', 'Welcome Dear, ' . $user->name);
+        return redirect('/')->with('success', 'Welcome Dear, ' . $user->name);
     }
 }
