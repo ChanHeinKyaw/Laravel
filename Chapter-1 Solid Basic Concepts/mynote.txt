@@ -191,3 +191,8 @@ run => php artisan tinker
 
 34. Accessors က table ထဲက column data တစ်ခု ကို လှမ်းမထုတ်ခင် မှာ အရင် ဆုံး အလုပ်လုပ် တဲ့  function ကို ပြောတာ။
     Mutators က table ထဲကို data မထည့်ခင် မှာ column data တစ်ခု ကို ပြင်ချင်ရင် အရင် ဆုံး အလုပ်လုပ် တဲ့  function ကို ပြောတာ။
+
+35. 
+1. auth()->check();
+2. @auth @else @endauth
+3. @guest @else @endguest
