@@ -9,17 +9,15 @@
                 <a href="" class="nav-link">Welcome {{ auth()->user()->name }}</a>
             @endif --}}
 
-            @guest
-                <a href="/register" class="nav-link">Register</a>
-            @else
-                <a href="" class="nav-link">Welcome {{ auth()->user()->name }}</a>
-            @endguest
-
             @auth
+                <a href="" class="nav-link">Welcome {{ auth()->user()->name }}</a>
                 <form action="/logout" method="POST">
                     @csrf
                     <button type="submit" class="nav-link btn btn-link">Logout</button>
                 </form>
+            @else
+                <a href="/register" class="nav-link">Register</a>
+                <a href="/login" class="nav-link">Login</a>
             @endauth
             <a href="#subscribe" class="nav-link">Subscribe</a>
         </div>
