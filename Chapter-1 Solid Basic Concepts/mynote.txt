@@ -196,3 +196,21 @@ run => php artisan tinker
 1. auth()->check();
 2. @auth @else @endauth
 3. @guest @else @endguest
+
+
+64. 
+
+php artisan make:model Comment -mfc 
+=> -mfc က Model နဲ့ အတူ migration , fictory, Controller တွေ အကုန်လုံးကို create မယ် လို့ ပြောလိုက်တာ။
+
+$table->foreignId('user_id')->references('id')->on('users')->onDelete('cascade');
+(or)
+$table->foreignId('user_id')->constrained()->cascadeOnDelete();
+------------------------------
+$table->foreignId('blog_id')->references('id')->on('blogs')->onDelete('cascade');
+(or)
+$table->foreignId('blog_id')->constrained()->cascadeOnDelete();  
+
+အလုပ်လုပ်ပုံက အတူတူ ပဲ laravel က constrained တို့ cascadeOnDelete တို့ကို သူ့ဘာသာ အလုပ်လုပ်ပေးသွားတယ် 
+manual လိုက် ထည့်ပေးစရာ မလိုဘူး။
+
