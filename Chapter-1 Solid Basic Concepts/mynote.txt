@@ -240,4 +240,19 @@ Blog က နေ comments ကို () parentheses နဲ့ ခေါ် လိ�
 'blog_id' ကို ထည့်ပေးစရာမလိုဘူး $b နဲ့ comments နဲ့ Hasmany Relation ရှိတဲ့ အတွက် Blog id ကို 
 laravel က သူ့ အလိုလို တစ်ခါတည်းယူသွားမှာ ပါ။။ 
 
+68
+Component တွေမှာ Class တွေကို merge လုပ်ချင်ရင် 
+component ထဲမှာ 
+{{ $attributes->merge(['class' => 'card d-flex p-3 my-3 shadow-sm']) }}
 
+attributes တွေ အားလုံး ကို merge လုပ်မယ် ဆိုပြီး ရေးပေးရတယ်။ 
+တကယ်လို့ 
+
+{{ $attributes }}
+
+ဒီလိုပဲရေးထားမယ် ဆိုရင် default class တွေ ထည့်မပေးရပါဘူး။
+component ကို ခေါသွားထားတဲ့ နေရာက ထည့်ပေးလိုက်တဲ့ attributes တွေ က ပဲ အလုပ်လုပ်သွားမှာပါ။
+
+<div {{ $attributes }}>
+    {{ $slot }}
+</div>
