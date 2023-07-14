@@ -3,7 +3,7 @@
 <div class="card d-flex p-3 my-3 shadow-sm">
     <div class="d-flex">
         <div>
-            <img src="https://i.pravatar.cc/300" width="50" height="50" class="rounded-circle" alt="">
+            <img src="{{ $comment->author->avatar }}" width="50" height="50" class="rounded-circle" alt="">
         </div>
         <div class="ms-3">
             <h6>{{ $comment->author->name }}</h6>

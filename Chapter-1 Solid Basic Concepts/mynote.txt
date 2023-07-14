@@ -214,3 +214,30 @@ $table->foreignId('blog_id')->constrained()->cascadeOnDelete();
 အလုပ်လုပ်ပုံက အတူတူ ပဲ laravel က constrained တို့ cascadeOnDelete တို့ကို သူ့ဘာသာ အလုပ်လုပ်ပေးသွားတယ် 
 manual လိုက် ထည့်ပေးစရာ မလိုဘူး။
 
+67. 
+laravel application စ run က AppServiceProvider က စအလုပ်လုပ်တယ်။ အဲ့တော့ 
+Modal တစ်ခု ချင်းစီမှာ 
+protected $guarded = [];
+ဆိုပြီး လိုက် ထည့်နေမယ့်အစား AppServiceProvider မှာ 
+Modal::unguard(); 
+လို့ ထည့်လိုက်ရင် Modal တစ်ခု ချင်းစီ လိုက်ထည့်စရာ မလိုတော့ဘူး Modal အကုန်လုံး Effect ဖြစ်သွားတယ်။
+
+
+cmd => 
+php artisan tinker
+$b->latest()->first();
+Comment::create(['body'=> 'Nice Article','user_id' => 1, 'blog_id' => $b->id]);
+
+===============================================
+laravel မှာ Table တစ်ခု နဲ့ တစ်ခု Relation Modal ချိတ်ထားရင် ဒီလို ခေါ် သုံးလို့ရတယ်။
+
+$b->comments()->create([
+    'body'=> 'Nice Article','user_id' => 1
+]);
+
+Blog က နေ comments ကို () parentheses နဲ့ ခေါ် လိုက်ရင် 
+သူ့နောက်မှာ Eloquent method (create,update,delete,...) တွေကို ခေါ်သုံး လို့ရပြီး။ 
+'blog_id' ကို ထည့်ပေးစရာမလိုဘူး $b နဲ့ comments နဲ့ Hasmany Relation ရှိတဲ့ အတွက် Blog id ကို 
+laravel က သူ့ အလိုလို တစ်ခါတည်းယူသွားမှာ ပါ။။ 
+
+
