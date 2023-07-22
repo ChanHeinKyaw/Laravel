@@ -256,3 +256,21 @@ component ကို ခေါသွားထားတဲ့ နေရာက ထ�
 <div {{ $attributes }}>
     {{ $slot }}
 </div>
+
+74
+pivot table ထဲကို data တွေထည့်ချင်ရင် 
+attach သုံးလို့ရပြီး 
+data ပြန် ဖျက်ချင်ရင် 
+detach သုံးလို့ရတယ်။
+
+Single data ပဲ ထည့်ချင်ရင် 
+attach(1);
+
+Single data ပဲ ဖျက်ချင်ရင် 
+detach(1);
+
+Multiple data ထည့်ချင်ရင်
+attach([1,2,3,4]);
+
+Multiple data ဖျက်ချင်ရင်
+detach([1,2,3,4]);
