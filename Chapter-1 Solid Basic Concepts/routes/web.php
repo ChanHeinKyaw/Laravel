@@ -34,6 +34,8 @@ Route::post('/logout',[AuthController::class,'logout'])->middleware('auth');
 Route::get('/login',[AuthController::class,'login'])->middleware('guest');
 Route::post('/login',[AuthController::class,'post_login'])->middleware('guest');
 
+Route::post('/blogs/{blog:slug}/subscription', [BlogController::class,'subscriptionHandler']);
+
 // Route::get('/categories/{category:slug}', function (Category $category) {
 //     // return view('blogs', ['blogs' => $category->blogs->load('category','author')]);
 //     return view('blogs', ['blogs' => $category->blogs,'categories' => Category::all(), 'currentCategory' => $category]);
