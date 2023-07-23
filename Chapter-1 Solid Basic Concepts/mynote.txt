@@ -274,3 +274,8 @@ attach([1,2,3,4]);
 
 Multiple data ဖျက်ချင်ရင်
 detach([1,2,3,4]);
+
+
+75
+php artisan queue:table
+php artisan queue:work
