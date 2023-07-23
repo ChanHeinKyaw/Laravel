@@ -53,4 +53,4 @@ Route::post('/blogs/{blog:slug}/subscription', [BlogController::class,'subscript
 //admin routes
 
 Route::get('/admin/blogs/create',[BlogController::class,'create'])->middleware('admin');
-
+Route::post('/admin/blogs/store',[BlogController::class,'store'])->middleware('admin');
