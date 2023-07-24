@@ -2,7 +2,7 @@
     <h1 class="my-3 text-center">Blog create form</h1>
     <div class="col-md-8 mx-auto">
         <x-card-wrapper>
-            <form action="/admin/blogs/store" method="POST">
+            <form action="/admin/blogs/store" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
@@ -23,6 +23,11 @@
                     <label for="body" class="form-label">Body</label>
                     <textarea name="body" id="body" cols="30" rows="10" class="form-control">{{ old('body') }}</textarea>
                     <x-error name="body"/>
+                </div>
+                <div class="mb-3">
+                    <label for="thumbnail" class="form-label">Thumbnail</label>
+                    <input type="file" name="thumbnail" class="form-control" id="thumbnail">
+                    <x-error name="thumbnail"/>
                 </div>
                 <div class="mb-3">
                     <label for="category" class="form-label">Category</label>
