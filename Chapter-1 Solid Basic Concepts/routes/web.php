@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\AdminBlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +52,6 @@ Route::post('/blogs/{blog:slug}/subscription', [BlogController::class,'subscript
 
 
 //admin routes
-
-Route::get('/admin/blogs/create',[BlogController::class,'create'])->middleware('admin');
-Route::post('/admin/blogs/store',[BlogController::class,'store'])->middleware('admin');
+Route::get('/admin/dashboard',[AdminBlogController::class,'index'])->middleware('admin');
+Route::get('/admin/blogs/create',[AdminBlogController::class,'create'])->middleware('admin');
+Route::post('/admin/blogs/store',[AdminBlogController::class,'store'])->middleware('admin');
