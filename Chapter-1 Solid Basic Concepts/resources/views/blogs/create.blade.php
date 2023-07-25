@@ -1,5 +1,5 @@
 <x-admin-layout>
-    <h1 class="my-3 text-center">Blog create form</h1>
+    <h1 class="text-center">Blog create form</h1>
     <x-card-wrapper>
         <form action="/admin/blogs/store" method="POST" enctype="multipart/form-data">
             @csrf
