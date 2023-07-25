@@ -44,6 +44,9 @@ class AuthController extends Controller
         ]);
         
         if(auth()->attempt($formData)){
+            if(auth()->user()->is_admin){
+                return redirect('/admin/dashboard');
+            }
             return redirect('/')->with('success' , 'Welcome Back');
         }else{
             return redirect()->back()->withErrors([

@@ -9,7 +9,9 @@ use Illuminate\Validation\Rule;
 class AdminBlogController extends Controller
 {
     public function index (){
-        return view('admin.blogs.index');
+        return view('admin.blogs.index',[
+            'blogs' => Blog::latest()->paginate(6),
+        ]);
     }
 
     public function create(){
@@ -32,6 +34,12 @@ class AdminBlogController extends Controller
         Blog::create($formDatas);
 
         return redirect('/');
+    }
+    
+    public function destroy(Blog $blog){
+        $blog->delete();
+
+        return back();
     }
 
 }
