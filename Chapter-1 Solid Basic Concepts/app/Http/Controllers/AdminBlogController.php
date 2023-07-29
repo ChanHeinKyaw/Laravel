@@ -50,4 +50,20 @@ class AdminBlogController extends Controller
         return back();
     }
 
+    public function update(Blog $blog){
+        $formDatas = request()->validate([
+            "title" => ['required'],
+            "slug" => ['required', Rule::unique('blogs','slug')->ignore($blog->id)],
+            "intro" => ['required'],
+            "body" => ['required'],
+            "category_id" => ['required', Rule::exists('categories','id')],
+        ]);
+
+        $formDatas['user_id'] = auth()->user()->id;
+        $formDatas['thumbnail'] = request()->file('thumbnail')->store('thumbnails') ?  "storage/" . request()->file('thumbnail')->store('thumbnails') : $blog->thumbnail;
+        $blog->update($formDatas);
+
+        return redirect('/');
+    }
+
 }
