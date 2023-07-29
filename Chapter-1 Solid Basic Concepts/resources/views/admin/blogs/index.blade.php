@@ -12,7 +12,7 @@
             <tbody>
               @foreach ($blogs as $blog)
                 <tr>
-                    <td>{{ $blog->title }}</td>
+                    <td><a href="/blogs/{{ $blog->slug }}">{{ $blog->title }}</a></td>
                     <td>{{ $blog->intro }}</td>
                     <td>
                         <a href="/admin/blogs/{{ $blog->slug }}/edit" class="btn btn-warning">Edit</a>
