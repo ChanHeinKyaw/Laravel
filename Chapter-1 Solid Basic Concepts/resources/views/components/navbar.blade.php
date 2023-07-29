@@ -10,6 +10,21 @@
             @endif --}}
 
             @auth
+            {{-- @if (auth()->user() && auth()->user()->is_admin)
+                <a href="/admin/dashboard" class="nav-link">Dashboard</a>
+            @endif --}}
+
+            {{-- or check with gate--}}
+
+            {{-- @if(auth()->user()->can('admin'))
+                <a href="/admin/dashboard" class="nav-link">Dashboard</a>
+            @endif --}}
+
+            {{-- or --}}
+
+            @can('admin')
+                <a href="/admin/dashboard" class="nav-link">Dashboard</a>
+            @endcan
             <img src="{{ auth()->user()->avatar }}" width="50" height="50" class="rounded-circle">
                 <a href="" class="nav-link">Welcome {{ auth()->user()->name }}</a>
                 <form action="/logout" method="POST">

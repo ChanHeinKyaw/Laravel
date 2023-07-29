@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Gate;
 
 class BlogController extends Controller
 {
@@ -12,6 +13,11 @@ class BlogController extends Controller
         // DB::listen(function($query){
         //     Log::info($query->sql);
         // });
+
+        // dd(auth()->user()->can('admin')); // return boolean
+        // dd(Gate::allows('admin')); // return boolean
+        // dd($this->authorize('admin')); // return Response Object
+        
         return view('blogs.index', [
             // 'blogs' => $this->getBlogs(),
             'blogs' => Blog::latest()
